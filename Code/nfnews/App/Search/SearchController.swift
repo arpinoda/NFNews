@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchController.swift
 //  nfnews
 //
 //  Created by Work on 2/6/21.
@@ -7,12 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+// TODO: Implement search features
+class SearchController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .blue
-        print(Strings.appVersion)
+        self.view.backgroundColor = .lightGray
+        self.title = "Search"
     }
 }
