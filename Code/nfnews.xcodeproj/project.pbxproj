@@ -27,6 +27,14 @@
 		96230EAC25CF4F2200DA9752 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96230EA725CF4F2200DA9752 /* Montserrat-Medium.otf */; };
 		96230EAD25CF4F2200DA9752 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96230EA825CF4F2200DA9752 /* Montserrat-Regular.otf */; };
 		96230EAE25CF4F2200DA9752 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96230EA925CF4F2200DA9752 /* Montserrat-ExtraBold.otf */; };
+		96C1E97C25D054CA00DC0033 /* NFNArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E97B25D054CA00DC0033 /* NFNArticle.swift */; };
+		96C1E98125D0555B00DC0033 /* NFNSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E98025D0555B00DC0033 /* NFNSource.swift */; };
+		96C1E98625D055A300DC0033 /* NFNResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E98525D055A300DC0033 /* NFNResponse.swift */; };
+		96C1E98B25D0586500DC0033 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E98A25D0586500DC0033 /* HomeViewModel.swift */; };
+		96C1E99025D05A1200DC0033 /* HomeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E98F25D05A1200DC0033 /* HomeViews.swift */; };
+		96C1E99525D05ED100DC0033 /* APIResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 96C1E99425D05ED100DC0033 /* APIResponse.json */; };
+		96C1E99D25D06A3200DC0033 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E99C25D06A3200DC0033 /* Helpers.swift */; };
+		96C1E9A325D073D800DC0033 /* NewsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E9A225D073D800DC0033 /* NewsApiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +81,14 @@
 		96230EA725CF4F2200DA9752 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
 		96230EA825CF4F2200DA9752 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		96230EA925CF4F2200DA9752 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		96C1E97B25D054CA00DC0033 /* NFNArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFNArticle.swift; sourceTree = "<group>"; };
+		96C1E98025D0555B00DC0033 /* NFNSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFNSource.swift; sourceTree = "<group>"; };
+		96C1E98525D055A300DC0033 /* NFNResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFNResponse.swift; sourceTree = "<group>"; };
+		96C1E98A25D0586500DC0033 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		96C1E98F25D05A1200DC0033 /* HomeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViews.swift; sourceTree = "<group>"; };
+		96C1E99425D05ED100DC0033 /* APIResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = APIResponse.json; sourceTree = "<group>"; };
+		96C1E99C25D06A3200DC0033 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		96C1E9A225D073D800DC0033 /* NewsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +143,7 @@
 				96230E6325CF41F800DA9752 /* App */,
 				96230E7225CF434600DA9752 /* Models */,
 				96230E6B25CF42BA00DA9752 /* Resources */,
+				96C1E9A125D073AC00DC0033 /* Service */,
 			);
 			path = nfnews;
 			sourceTree = "<group>";
@@ -176,6 +193,8 @@
 			children = (
 				96230E0F25CF3C9F00DA9752 /* HomeController.swift */,
 				96230E9E25CF494700DA9752 /* HomeCoordinator.swift */,
+				96C1E98F25D05A1200DC0033 /* HomeViews.swift */,
+				96C1E98A25D0586500DC0033 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -207,6 +226,7 @@
 		96230E6B25CF42BA00DA9752 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				96C1E99425D05ED100DC0033 /* APIResponse.json */,
 				96230E1425CF3CA100DA9752 /* Assets.xcassets */,
 				96230E1925CF3CA100DA9752 /* Info.plist */,
 				96230E1625CF3CA100DA9752 /* LaunchScreen.storyboard */,
@@ -220,6 +240,9 @@
 			isa = PBXGroup;
 			children = (
 				96230E8525CF47AC00DA9752 /* Coordinator.swift */,
+				96C1E97B25D054CA00DC0033 /* NFNArticle.swift */,
+				96C1E98525D055A300DC0033 /* NFNResponse.swift */,
+				96C1E98025D0555B00DC0033 /* NFNSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +250,7 @@
 		96230E7325CF43A300DA9752 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				96C1E99C25D06A3200DC0033 /* Helpers.swift */,
 				96230E7D25CF458D00DA9752 /* Strings.swift */,
 			);
 			path = Utils;
@@ -250,6 +274,14 @@
 				96230EA925CF4F2200DA9752 /* Montserrat-ExtraBold.otf */,
 			);
 			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		96C1E9A125D073AC00DC0033 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				96C1E9A225D073D800DC0033 /* NewsApiService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +391,7 @@
 				96230EAE25CF4F2200DA9752 /* Montserrat-ExtraBold.otf in Resources */,
 				96230EAA25CF4F2200DA9752 /* Montserrat-Bold.otf in Resources */,
 				96230E4725CF415500DA9752 /* update_build_date.sh in Resources */,
+				96C1E99525D05ED100DC0033 /* APIResponse.json in Resources */,
 				96230E4825CF415500DA9752 /* update_build_number.sh in Resources */,
 				96230EAD25CF4F2200DA9752 /* Montserrat-Regular.otf in Resources */,
 				96230E1825CF3CA100DA9752 /* LaunchScreen.storyboard in Resources */,
@@ -409,15 +442,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C1E98125D0555B00DC0033 /* NFNSource.swift in Sources */,
 				96230E8625CF47AC00DA9752 /* Coordinator.swift in Sources */,
 				96230E9025CF48A200DA9752 /* FavoriteController.swift in Sources */,
 				96230E9F25CF494700DA9752 /* HomeCoordinator.swift in Sources */,
 				96230E1025CF3C9F00DA9752 /* HomeController.swift in Sources */,
 				96230E9525CF48CC00DA9752 /* SearchController.swift in Sources */,
 				96230E7E25CF458D00DA9752 /* Strings.swift in Sources */,
+				96C1E9A325D073D800DC0033 /* NewsApiService.swift in Sources */,
+				96C1E99025D05A1200DC0033 /* HomeViews.swift in Sources */,
 				96230E8B25CF481700DA9752 /* AppTabBarController.swift in Sources */,
+				96C1E98B25D0586500DC0033 /* HomeViewModel.swift in Sources */,
+				96C1E98625D055A300DC0033 /* NFNResponse.swift in Sources */,
 				96230E0C25CF3C9F00DA9752 /* AppDelegate.swift in Sources */,
 				96230E9A25CF48E800DA9752 /* ProfileController.swift in Sources */,
+				96C1E99D25D06A3200DC0033 /* Helpers.swift in Sources */,
+				96C1E97C25D054CA00DC0033 /* NFNArticle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

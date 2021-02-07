@@ -1,0 +1,266 @@
+{
+   "status":"ok",
+   "totalResults":27,
+   "articles":[
+      {
+         "source":{
+            "id":"techcrunch",
+            "name":"TechCrunch"
+         },
+         "author":"Ron Miller",
+         "title":"Model9 gets $9M Series A to move data between mainframes and cloud",
+         "description":"Model9, an Israeli startup launched by mainframe vets, has come up with a way to transfer data between mainframe computers and the cloud, and today the company announced a $9 million Series A. Intel Capital led the round with help from existing investors incl…",
+         "url":"https://techcrunch.com/2020/02/12/model9-gets-9m-series-a-to-move-data-between-mainframes-and-cloud/",
+         "urlToImage":"https://techcrunch.com/wp-content/uploads/2020/02/GettyImages-170882358-1.jpg?w=574",
+         "publishedAt":"2020-02-12T14:07:57Z",
+         "content":"Model9, an Israeli startup launched by mainframe vets, has come up with a way to transfer data between mainframe computers and the cloud, and today the company announced a $9 million Series A.\r\nIntel Capital led the round with help from existing investors inc… [+2301 chars]"
+      },
+      {
+         "source":{
+            "id":"techcrunch",
+            "name":"TechCrunch"
+         },
+         "author":"Ingrid Lunden",
+         "title":"Deep Instinct nabs $43M for a deep-learning cybersecurity solution that can suss an attack before it happens",
+         "description":"The worlds of artificial intelligence and cybersecurity have become deeply entwined in recent years, as organizations work to keep up with — and ideally block — increasingly sophisticated malicious hackers. Today, a startup that’s built a deep learning soluti…",
+         "url":"https://techcrunch.com/2020/02/12/deep-instinct-nabs-43m-for-a-deep-learning-cybersecurity-solution-that-can-suss-an-attack-before-it-happens/",
+         "urlToImage":"https://techcrunch.com/wp-content/uploads/2019/09/GettyImages-1079200304.jpg?w=544",
+         "publishedAt":"2020-02-12T14:01:18Z",
+         "content":"The worlds of artificial intelligence and cybersecurity have become deeply entwined in recent years, as organizations work to keep up with — and ideally block — increasingly sophisticated malicious hackers. Today, a startup that’s built a deep learning soluti… [+5329 chars]"
+      },
+      {
+         "source":{
+            "id":"techcrunch",
+            "name":"TechCrunch"
+         },
+         "author":"Zack Whittaker",
+         "title":"Radar, a location data startup, says its \"big bet\" is on putting privacy first",
+         "description":"It's a promise that Radar's chief executive said he's willing to bet the company on.",
+         "url":"https://techcrunch.com/2020/02/12/radar-location-startup-privacy/",
+         "urlToImage":"https://techcrunch.com/wp-content/uploads/2020/02/GettyImages-868376176.jpg?w=600",
+         "publishedAt":"2020-02-12T14:00:20Z",
+         "content":"Pick any app on your phone, and there’s a greater than average chance that it’s tracking your location right now.\r\nSometimes they don’t even tell you. Your location can be continually collected and uploaded, then monetized by advertisers and other data tracki… [+6037 chars]"
+      },
+      {
+         "source":{
+            "id":"techcrunch",
+            "name":"TechCrunch"
+         },
+         "author":"Travis Bernard",
+         "title":"Extra Crunch Anniversary: 9 lessons from building a media subscription product",
+         "description":"Last year we embarked on a mission to democratize information for startups, and today we are celebrating the one-year anniversary of our membership program, Extra Crunch.  Since launching Extra Crunch, we’ve published more than 1,000 articles, onboarded a few…",
+         "url":"https://techcrunch.com/2020/02/12/extra-crunch-anniversary-9-lessons-from-building-a-media-subscription-product/",
+         "urlToImage":"https://techcrunch.com/wp-content/uploads/2020/02/ec-turns-one-alt-1.png?w=753",
+         "publishedAt":"2020-02-12T13:10:16Z",
+         "content":"Last year we embarked on a mission to democratize information for startups, and today we are celebrating the one-year anniversary of our membership program, Extra Crunch. \r\nSince launching Extra Crunch, we’ve published more than 1,000 articles, onboarded a fe… [+722 chars]"
+      },
+      {
+         "source":{
+            "id":"techcrunch",
+            "name":"TechCrunch"
+         },
+         "author":"Connie Loizos",
+         "title":"Battery Ventures just closed on a whopping $2 billion across two funds, two years after its last fundraise",
+         "description":"Battery Ventures,  the now 37-year-old investment firm, just closed on two new funds that — at $2 billion in capital commitments — nearly double the record-breaking $1.2 billion that the firm closed on exactly two years ago. It sounds very typical of the broa…",
+         "url":"https://techcrunch.com/2020/02/12/battery-ventures-just-closed-on-a-whopping-2-billion-across-two-funds-two-years-after-its-last-fundraise/",
+         "urlToImage":"https://techcrunch.com/wp-content/uploads/2020/02/ChelseaPhotoBig.jpg?w=717",
+         "publishedAt":"2020-02-12T12:30:08Z",
+         "content":"Battery Ventures,  the now 37-year-old investment firm, just closed on two new funds that — at $2 billion in capital commitments — nearly double the record-breaking $1.2 billion that the firm closed on exactly two years ago.\r\nIt sounds very typical of the bro… [+5954 chars]"
+      },
+      {
+         "source":{
+            "id":"techcrunch",
+            "name":"TechCrunch"
+         },
+         "author":"Natasha Lomas",
+         "title":"UK names its pick for social media 'harms' watchdog",
+         "description":"The UK government has taken the next step in its grand policymaking challenge to tame the worst excesses of social media by regulating a broad range of online harms — naming the existing communications watchdog, Ofcom, as its preferred pick for enforcing rule…",
+         "url":"https://techcrunch.com/2020/02/12/uk-names-its-pick-for-social-media-harms-watchdog/",
+         "urlToImage":"https://techcrunch.com/wp-content/uploads/2019/08/GettyImages-575503855.jpg?w=600",
+         "publishedAt":"2020-02-12T12:05:12Z",
+         "content":"The UK government has taken the next step in its grand policymaking challenge to tame the worst excesses of social media by regulating a broad range of online harms — naming the existing communications watchdog, Ofcom, as its preferred pick for enforcing rule… [+9063 chars]"
+      },
+      {
+         "source":{
+            "id":"hacker-news",
+            "name":"Hacker News"
+         },
+         "author":"Ben",
+         "title":"A day^W^W Several months in the life of Project Zero - Part 1: The Chrome bug of suffering",
+         "description":"Posted by Sergei Glazunov and Mark Brand, Project Zero   Introduction   It was a normal week in the Project Zero office when we got an inte...",
+         "url":"https://googleprojectzero.blogspot.com/2020/02/several-months-in-life-of-part1.html",
+         "urlToImage":"https://lh3.googleusercontent.com/Q_ZLoJ0bKfCVByQKvwrcXFYt3pUX9GUJLxpRAIz7ULstT_4AtgNSLFy6RRrNt0tyjfDSBHf15R1InMVcLggmuhdY8HqLZZQ1Y6dr8Y8zhWw2EPztWY1aJOhoc2PTCKNjDFKO3U43=w1200-h630-p-k-no-nu",
+         "publishedAt":"2020-02-12T11:37:47.8445854Z",
+         "content":null
+      },
+      {
+         "source":{
+            "id":"techcrunch",
+            "name":"TechCrunch"
+         },
+         "author":"Josh Constine",
+         "title":"Facebook will pay Reuters to fact-check Deepfakes and more",
+         "description":"Eye-witness photos and videos distributed by news wire Reuters already go through an exhaustive media verification process. Now the publisher will bring that expertise to the fight against misinformation on Facebook. Today it launches the new Reuters Fact Che…",
+         "url":"https://techcrunch.com/2020/02/12/reuters-facebook-fact-checker/",
+         "urlToImage":"https://techcrunch.com/wp-content/uploads/2020/02/Reuters-Facebook-Fact-Checking.jpg?w=710",
+         "publishedAt":"2020-02-12T11:30:29Z",
+         "content":"Eye-witness photos and videos distributed by news wire Reuters already go through an exhaustive media verification process. Now the publisher will bring that expertise to the fight against misinformation on Facebook. Today it launches the new Reuters Fact Che… [+5034 chars]"
+      },
+      {
+         "source":{
+            "id":"techcrunch",
+            "name":"TechCrunch"
+         },
+         "author":"Manish Singh",
+         "title":"Nokia pulls out of MWC over coronavirus concerns",
+         "description":"Nokia, one of the omnipresent firms at major tech trade conferences, won’t be attending this year’s Mobile World Congress, it said Wednesday citing concerns of outbreak of coronavirus. The Finnish company has become the latest to back out of MWC. In recent da…",
+         "url":"https://techcrunch.com/2020/02/12/nokia-pulls-out-of-mwc-over-coronavirus-concerns/",
+         "urlToImage":"https://techcrunch.com/wp-content/uploads/2015/04/shutterstock_245957161.jpg?w=592",
+         "publishedAt":"2020-02-12T11:28:13Z",
+         "content":"Nokia, one of the omnipresent firms at major tech trade conferences, won’t be attending this year’s Mobile World Congress, it said Wednesday citing concerns of outbreak of coronavirus.\r\nThe Finnish company has become the latest to back out of MWC. In recent d… [+1366 chars]"
+      },
+      {
+         "source":{
+            "id":"hacker-news",
+            "name":"Hacker News"
+         },
+         "author":"https://www.facebook.com/bbcnews",
+         "title":"UK's 2021 census 'could be the last'",
+         "description":"The UK's national statistician hopes other data sources could replace the 200-year-old questionnaire.",
+         "url":"https://www.bbc.co.uk/news/uk-51468919",
+         "urlToImage":"https://ichef.bbci.co.uk/news/1024/branded_news/10082/production/_110866656_gettyimages-523536219.jpg",
+         "publishedAt":"2020-02-12T11:23:08.8128576Z",
+         "content":"Image copyrightGetty Images\r\nThe 2021 census could be the last one ever to be carried out, the UK's national statistician has revealed. \r\nProf Sir Ian Diamond said he was examining cheaper alternatives to the 10-yearly compulsory questionnaire delivered to ev… [+2452 chars]"
+      },
+      {
+         "source":{
+            "id":"hacker-news",
+            "name":"Hacker News"
+         },
+         "author":"",
+         "title":"Rotary Cellphone",
+         "description":"",
+         "url":"http://justine-haupt.com/rotarycellphone/",
+         "urlToImage":null,
+         "publishedAt":"2020-02-12T10:07:13.2551634Z",
+         "content":"Rotary Cellphone\r\nWhy a rotary cellphone? Because in a finicky, annoying, touchscreen world of hyperconnected people using phones they have no control over or understanding of, I wanted something that would be entirely mine, personal, and absolutely tactile,w… [+5096 chars]"
+      },
+      {
+         "source":{
+            "id":"techcrunch",
+            "name":"TechCrunch"
+         },
+         "author":"Ingrid Lunden",
+         "title":"Fenergo raises $80M at an $800M valuation for compliance and other fintech services aimed at banks",
+         "description":"Europe has emerged as a key region for hatching and scaling fintech companies, and today one of the bigger hopefuls is announcing a large round of funding, from a mix of strategic investors, to keep growing its business. Fenergo, a startup from Dublin that bu…",
+         "url":"https://techcrunch.com/2020/02/12/fenergo-raises-80m-at-an-800m-valuation-for-compliance-and-other-fintech-services-aimed-at-banks/",
+         "urlToImage":"https://techcrunch.com/wp-content/uploads/2018/10/GettyImages-903608096.jpg?w=565",
+         "publishedAt":"2020-02-12T09:51:25Z",
+         "content":"Europe has emerged as a key region for hatching and scaling fintech companies, and today one of the bigger hopefuls is announcing a large round of funding, from a mix of strategic investors, to keep growing its business.\r\nFenergo, a startup from Dublin that b… [+5547 chars]"
+      },
+      {
+         "source":{
+            "id":"hacker-news",
+            "name":"Hacker News"
+         },
+         "author":null,
+         "title":"Becoming a high performing software developer working from your bedroom",
+         "description":"Looking to build a custom web or mobile application? We build carefully crafted software for your business like it's our baby!",
+         "url":"https://zephony.com/remote-software-developer-productivity",
+         "urlToImage":null,
+         "publishedAt":"2020-02-12T08:23:09.4508111Z",
+         "content":null
+      },
+      {
+         "source":{
+            "id":"hacker-news",
+            "name":"Hacker News"
+         },
+         "author":null,
+         "title":"OpenPush: A Free, Decentralized Push Messaging Framework for Android",
+         "description":"Push messages are an essential part of connected mobile devices. They are also one of the critical missing pieces in the open source Android ecosystem. Until...",
+         "url":"https://f-droid.org/en/2020/02/03/openpush-talk.html",
+         "urlToImage":null,
+         "publishedAt":"2020-02-12T07:52:52.938987Z",
+         "content":"Push messages are an essential part of connected mobile devices. They are also one of the critical missing pieces in the open source Android ecosystem. Until now, free Android apps would either need to implement their own push notification system, do without … [+1834 chars]"
+      },
+      {
+         "source":{
+            "id":"espn",
+            "name":"ESPN"
+         },
+         "author":null,
+         "title":"Source: Colorado's Tucker expected to join MSU",
+         "description":"Mel Tucker, who was 5-7 in his only season with Colorado, is expected to be hired as Michigan State's next head coach, a source confirmed to ESPN.",
+         "url":"http://espn.go.com/college-football/story/_/id/28684011/source-colorado-mel-tucker-expected-become-michigan-state-head-coach",
+         "urlToImage":"https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2020%2F0212%2Fr665093_1296x729_16%2D9.jpg",
+         "publishedAt":"2020-02-12T06:52:00Z",
+         "content":"Michigan State is expected to hire Colorado's Mel Tucker as its next head coach, a source confirmed to ESPN's Adam Rittenberg.\r\nMichigan State's job came open when Mark Dantonio announced his retirement last week.\r\nTucker was 5-7 in 2019 -- his only season wi… [+1372 chars]"
+      },
+      {
+         "source":{
+            "id":"techcrunch",
+            "name":"TechCrunch"
+         },
+         "author":"Mike Butcher",
+         "title":"European founders look to new markets, aim for profitability",
+         "description":"To get a better sense of what lies ahead for the European startup ecosystem, we spoke to several investors and entrepreneurs in the region about their impressions and lessons learned from 2019, along with their predictions for 2020. We asked for blunt respons…",
+         "url":"https://techcrunch.com/2020/02/11/european-founders-look-to-new-markets-hire-well-and-aim-for-profit/",
+         "urlToImage":"https://techcrunch.com/wp-content/uploads/2020/01/GettyImages-1135935658.jpg?w=600",
+         "publishedAt":"2020-02-12T06:47:21Z",
+         "content":"To get a better sense of what lies ahead for the European startup ecosystem, we spoke to several investors and entrepreneurs in the region about their impressions and lessons learned from 2019, along with their predictions for 2020.\r\nWe asked for blunt respon… [+1108 chars]"
+      },
+      {
+         "source":{
+            "id":"hacker-news",
+            "name":"Hacker News"
+         },
+         "author":null,
+         "title":"Apple Engineer Killed in Tesla Crash Had Previously Complained About Autopilot | KQED News",
+         "description":"Walter Huang, who died in 2018 after his Tesla Model X slammed into a concrete barrier, had previously complained about the SUV malfunctioning on the same stretch of Silicon Valley freeway, according to NTSB documents.",
+         "url":"https://www.kqed.org/news/11801138/apple-engineer-killed-in-tesla-crash-had-previously-complained-about-autopilot",
+         "urlToImage":"https://ww2.kqed.org/app/uploads/sites/10/2020/02/Tesla-Mountain-View-Crash-1020x610.jpg",
+         "publishedAt":"2020-02-12T05:08:17.8669206Z",
+         "content":"Huang's 2017 Tesla Model X was traveling at 71 mph when it crashed against the same attenuator, which the NTSB determined had been damaged and repaired more frequently than any other left-exit in Caltrans' District 4, which includes all of the Bay Area. \r\nIn … [+1859 chars]"
+      },
+      {
+         "source":{
+            "id":"espn",
+            "name":"ESPN"
+         },
+         "author":"Adam RittenbergESPN Senior Writer ",
+         "title":"2 Ohio State football players charged with rape",
+         "description":"Ohio State seniors Amir Riep and Jahsen Wint face rape and kidnapping charges stemming from an alleged incident earlier this month.",
+         "url":"http://espn.go.com/college-football/story/_/id/28683440/ohio-state-amir-riep-jahsen-wint-face-rape-kidnapping-charges",
+         "urlToImage":"https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2016%2F0504%2Fr80076_1296x729_16%2D9.jpg",
+         "publishedAt":"2020-02-12T04:54:00Z",
+         "content":"Ohio State football players Amir Riep and Jahsen Wint both face charges of rape and kidnapping stemming from an alleged incident last week.\r\nRiep and Wint both were charged Tuesday in Franklin County Municipal Court in Ohio. Warrants have been issued for both… [+1006 chars]"
+      },
+      {
+         "source":{
+            "id":"espn",
+            "name":"ESPN"
+         },
+         "author":"Emily KaplanESPN ",
+         "title":"Blues: Bouwmeester alert after cardiac episode",
+         "description":"Blues defenseman Jay Bouwmeester was taken to the hospital after a cardiac episode on the bench during Tuesday night's game against the Anaheim Ducks and is conscious and alert, the team said in a statement.",
+         "url":"http://espn.go.com/nhl/story/_/id/28683219/blues-say-jay-bouwmeester-alert-heart-episode-bench-game-postponed",
+         "urlToImage":"https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2020%2F0212%2Fr665073_1296x729_16%2D9.jpg",
+         "publishedAt":"2020-02-12T04:06:00Z",
+         "content":"Blues defenseman Jay Bouwmeester was taken to the hospital after a cardiac episode on the bench during Tuesday night's game against the Anaheim Ducks and is conscious and alert, the team said in a statement.\r\n\"Thankfully, with the quick response of our medica… [+3112 chars]"
+      },
+      {
+         "source":{
+            "id":"espn",
+            "name":"ESPN"
+         },
+         "author":null,
+         "title":"Embiid on Philly fans booing him: 'That's cool'",
+         "description":"Joel Embiid had 26 points and nine rebounds in the 76ers' 110-103 win over the Clippers. After his recent social posts, he was booed by the hometown crowd to begin the game.",
+         "url":"http://espn.go.com/nba/story/_/id/28681789/76ers-joel-embiid-gets-booed-big-game-social-posts",
+         "urlToImage":"https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2020%2F0102%2Fr647817_1296x729_16%2D9.jpg",
+         "publishedAt":"2020-02-12T00:25:00Z",
+         "content":"PHILADELPHIA -- In the wake of Joel Embiid's latest foray into the social media world, Philadelphia 76ers coach Brett Brown declared before Tuesday's game here against the LA Clippers that he expected to get a big performance from his All-Star center.\r\n\"I loo… [+5345 chars]"
+      }
+   ]
+}
