@@ -36,6 +36,8 @@
 		96C1E99D25D06A3200DC0033 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E99C25D06A3200DC0033 /* Helpers.swift */; };
 		96C1E9A325D073D800DC0033 /* NewsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E9A225D073D800DC0033 /* NewsApiService.swift */; };
 		96C1E9AB25D0B60000DC0033 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E9AA25D0B60000DC0033 /* FontManager.swift */; };
+		96C1E9B325D19D6400DC0033 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E9B225D19D6400DC0033 /* Theme.swift */; };
+		96C1E9B825D19DCF00DC0033 /* Theme+Implementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E9B725D19DCF00DC0033 /* Theme+Implementation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		96C1E99C25D06A3200DC0033 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		96C1E9A225D073D800DC0033 /* NewsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiService.swift; sourceTree = "<group>"; };
 		96C1E9AA25D0B60000DC0033 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		96C1E9B225D19D6400DC0033 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = nfnews/Resources/Theme.swift; sourceTree = SOURCE_ROOT; };
+		96C1E9B725D19DCF00DC0033 /* Theme+Implementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Theme+Implementation.swift"; path = "nfnews/Resources/Theme+Implementation.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,8 @@
 				96C1E9AA25D0B60000DC0033 /* FontManager.swift */,
 				96230E1925CF3CA100DA9752 /* Info.plist */,
 				96230E1625CF3CA100DA9752 /* LaunchScreen.storyboard */,
+				96C1E9B225D19D6400DC0033 /* Theme.swift */,
+				96C1E9B725D19DCF00DC0033 /* Theme+Implementation.swift */,
 				96230EA325CF4F1200DA9752 /* Fonts */,
 				96230E7325CF43A300DA9752 /* Utils */,
 			);
@@ -445,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C1E9B825D19DCF00DC0033 /* Theme+Implementation.swift in Sources */,
 				96C1E98125D0555B00DC0033 /* NFNSource.swift in Sources */,
 				96C1E9AB25D0B60000DC0033 /* FontManager.swift in Sources */,
 				96230E8625CF47AC00DA9752 /* Coordinator.swift in Sources */,
@@ -454,6 +461,7 @@
 				96230E9525CF48CC00DA9752 /* SearchController.swift in Sources */,
 				96230E7E25CF458D00DA9752 /* Strings.swift in Sources */,
 				96C1E9A325D073D800DC0033 /* NewsApiService.swift in Sources */,
+				96C1E9B325D19D6400DC0033 /* Theme.swift in Sources */,
 				96C1E99025D05A1200DC0033 /* HomeViews.swift in Sources */,
 				96230E8B25CF481700DA9752 /* AppTabBarController.swift in Sources */,
 				96C1E98B25D0586500DC0033 /* HomeViewModel.swift in Sources */,
