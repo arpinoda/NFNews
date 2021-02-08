@@ -35,6 +35,7 @@
 		96C1E99525D05ED100DC0033 /* APIResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 96C1E99425D05ED100DC0033 /* APIResponse.json */; };
 		96C1E99D25D06A3200DC0033 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E99C25D06A3200DC0033 /* Helpers.swift */; };
 		96C1E9A325D073D800DC0033 /* NewsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E9A225D073D800DC0033 /* NewsApiService.swift */; };
+		96C1E9AB25D0B60000DC0033 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E9AA25D0B60000DC0033 /* FontManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		96C1E99425D05ED100DC0033 /* APIResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = APIResponse.json; sourceTree = "<group>"; };
 		96C1E99C25D06A3200DC0033 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		96C1E9A225D073D800DC0033 /* NewsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiService.swift; sourceTree = "<group>"; };
+		96C1E9AA25D0B60000DC0033 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			children = (
 				96C1E99425D05ED100DC0033 /* APIResponse.json */,
 				96230E1425CF3CA100DA9752 /* Assets.xcassets */,
+				96C1E9AA25D0B60000DC0033 /* FontManager.swift */,
 				96230E1925CF3CA100DA9752 /* Info.plist */,
 				96230E1625CF3CA100DA9752 /* LaunchScreen.storyboard */,
 				96230EA325CF4F1200DA9752 /* Fonts */,
@@ -443,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96C1E98125D0555B00DC0033 /* NFNSource.swift in Sources */,
+				96C1E9AB25D0B60000DC0033 /* FontManager.swift in Sources */,
 				96230E8625CF47AC00DA9752 /* Coordinator.swift in Sources */,
 				96230E9025CF48A200DA9752 /* FavoriteController.swift in Sources */,
 				96230E9F25CF494700DA9752 /* HomeCoordinator.swift in Sources */,
