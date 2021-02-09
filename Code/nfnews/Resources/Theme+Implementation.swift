@@ -25,11 +25,12 @@ private extension UIColor {
 /// Implement a Light theme
 public struct LightTheme: Theme {
     let backgroundGradients: [UIColor] = [UIColor.palette.grayPrimary, UIColor.palette.grayPrimaryDark]
+    let collectionViewCellSelected: UIColor = UIColor.palette.grayPrimaryLight
     let collectionViewSubtitle: UIColor = UIColor.palette.blackPrimaryLight
     let collectionViewTitle: UIColor = UIColor.palette.blackPrimaryDark
     let headerBackground: [UIColor] = [UIColor.palette.blueSkyDark, UIColor.palette.blueSkyLight]
     let tableViewDragHandle: UIColor = UIColor.palette.blackPrimary
-    let tableViewSeparator: UIColor = .clear
+    let tableViewSeparator: UIColor = UIColor.palette.blackPrimary
     let tableViewTitle: UIColor = UIColor.palette.blackPrimary
     let logoTint: UIColor = UIColor.palette.blackPrimaryDark
     let tabBarItemSelectedBackground: UIColor = UIColor.palette.grayPrimaryLight

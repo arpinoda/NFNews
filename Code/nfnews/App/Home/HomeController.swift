@@ -11,52 +11,70 @@ class HomeController: UIViewController {
 
     public var coordinator: HomeCoordinator?
     
-    // A lazy closure allows us to reference "self" during var instantiation
+    /// A lazy closure allows us to reference "self" during var instantiation.
+    /// We're "binding" to the view model by passing various callback functions
     fileprivate lazy var viewModel: HomeViewModel = {
         return HomeViewModel(
             apiClient: LocalAPIService(),
 //            apiClient: RemoteAPIService(),
             onLoading: self.onLoading,
             onError: self.onError,
-            onSuccess: self.onSuccess
+            onSuccess: self.onSuccess,
+            onArticleTapped: self.onArticleTapped
         )
     }()
     
     // Views
-    fileprivate var tableView = HomeTableView()
+    fileprivate var headerView = AppHeader()
+    fileprivate var logoView = AppLogo()
+    fileprivate var tableView = AppTableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
         self.setupUI()
         self.loadData()
     }
     
     private func setupUI() {
-        self.view.backgroundColor = .white
-        self.title = "Home"
         view.addSubview(tableView)
+        view.addSubview(headerView)
+        view.addSubview(logoView)
+        view.backgroundColor = .white
+        
+        navigationController?.navigationBar.isHidden = true
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.reuseIdentifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
+    @objc
     private func loadData() {
         viewModel.fetchHeadlines()
     }
     
-    private func onSuccess(response: NFNResponse) {
+    private func onSuccess() {
+        tableView.refreshControl?.endRefreshing()
         self.tableView.reloadData()
-        print("Success!")
     }
     
     private func onError(message: String) {
-        print(message)
+        tableView.refreshControl?.endRefreshing()
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+        present(alert, animated: true, completion: nil)
     }
     
     private func onLoading() {
-        print("loading")
+        tableView.refreshControl?.beginRefreshing()
+    }
+    
+    private func onArticleTapped(url: URL) {
+        print(url.absoluteString)
     }
 }
 
@@ -66,13 +84,26 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.numberOfRowsInSection(section: section)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
-        self.configureCell(cell: cell, indexPath: indexPath)
-        return cell
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.numberOfSections()
     }
     
-    private func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
-        cell.textLabel?.text = viewModel.textLabelForItem(at: indexPath)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(viewModel.heightForRowAt(indexPath: indexPath))
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.reuseIdentifier, for: indexPath) as? TableViewCell else {
+            return UITableViewCell()
+        }
+        
+        let model = viewModel.modelForCell(at: indexPath)
+        cell.model = model
+        
+        if indexPath.section == 0 {
+            cell.borderColor = nil
+        }
+        
+        return cell
     }
 }

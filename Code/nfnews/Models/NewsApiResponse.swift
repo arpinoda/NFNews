@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct NFNResponse: Codable {
+struct NewsApiResponse: Codable {
     let status: String
     let totalResults: Int
-    let articles: [NFNArticle]?
+    let articles: [NewsApiArticle]?
     
     // Populated when error occurs
     let code: String?

@@ -14,7 +14,6 @@ class FavoriteController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .gray
-        self.title = "Favorite"
     }
 }
 

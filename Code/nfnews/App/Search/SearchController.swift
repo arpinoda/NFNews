@@ -14,6 +14,5 @@ class SearchController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .lightGray
-        self.title = "Search"
     }
 }
