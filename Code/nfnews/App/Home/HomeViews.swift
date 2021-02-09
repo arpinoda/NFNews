@@ -272,18 +272,16 @@ class AppTableView: UITableView {
         
         if let gradientColors = self.gradientColors, !gradientsConfigured, leftBackground.frame.width > 0, rightBackground.frame.width > 0 {
             self.gradientsConfigured = true
-            
+
             // Left background
             let bannerTopColor = gradientColors[0]
             let bannerBottomColor = gradientColors[1]
             leftBackground.addGradientBackground(colors: bannerTopColor, bannerBottomColor, colorLocations: [0.8, 1.0])
-            
+
             // Right background
             let leftColor = gradientColors[1]
             let rightColor = gradientColors[0]
             rightBackground.addGradientBackground(colors: leftColor, rightColor, colorLocations: [0.0, 1.0], angle: 90.0)
-
-            
         }
     }
     

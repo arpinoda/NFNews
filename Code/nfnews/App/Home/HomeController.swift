@@ -24,6 +24,10 @@ class HomeController: UIViewController {
         )
     }()
     
+    // Animators
+    fileprivate let headerAnimator = UIViewPropertyAnimator(duration: 1.0, curve: .linear)
+    fileprivate let logoAnimator = UIViewPropertyAnimator(duration: 1.0, curve: .easeIn)
+    
     // Views
     fileprivate var headerView = AppHeader()
     fileprivate var logoView = AppLogo()
@@ -32,6 +36,7 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        self.setupAnimations()
         self.loadData()
     }
     
@@ -50,6 +55,23 @@ class HomeController: UIViewController {
         tableView.refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
+    private func setupAnimations() {
+        headerAnimator.pausesOnCompletion = true
+        headerAnimator.addAnimations {
+            self.headerView.heightConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        }
+        
+        logoAnimator.scrubsLinearly = false
+        logoAnimator.pausesOnCompletion = true
+        logoAnimator.addAnimations {
+            self.logoView.topConstraint.constant = 0.055 * UI.screenHeight * UI.screenScale
+            self.view.layoutIfNeeded()
+        }
+        
+        tableView.isScrollEnabled = false
+    }
+    
     @objc
     private func loadData() {
         viewModel.fetchHeadlines()
@@ -58,6 +80,7 @@ class HomeController: UIViewController {
     private func onSuccess() {
         tableView.refreshControl?.endRefreshing()
         self.tableView.reloadData()
+        tableView.isScrollEnabled = true
     }
     
     private func onError(message: String) {
@@ -67,6 +90,7 @@ class HomeController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
 
         present(alert, animated: true, completion: nil)
+        tableView.isScrollEnabled = true
     }
     
     private func onLoading() {
@@ -105,5 +129,20 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if tableView.isScrollEnabled {
+            let insetTop = view.safeAreaInsets.top + scrollView.contentInset.top
+            let scrollY = scrollView.contentOffset.y
+
+            let logoFraction = 1 + (scrollY / insetTop)
+            let headerFraction =
+                1 + (scrollY + headerView.frame.minY) /
+                    (insetTop - headerView.frame.minY)
+
+            logoAnimator.fractionComplete = logoFraction
+            headerAnimator.fractionComplete = headerFraction
+        }
     }
 }
