@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum APIError: Error {
-    case apiGeneratedError(String)
-    case decodeError(String)
-    case fileError(String)
+enum APIError: Error, Equatable {
+    case apiGeneratedError
+    case decodeError
+    case fileError
     case requestFailed
-    case statusCodeInvalid(String)
+    case statusCodeInvalid
 }
 
 /// Avoiding traditional Singleton pattern so code isn't TOO loosely coupled
@@ -22,28 +22,32 @@ protocol APIServiceable {
 
 /// NewsApi.org official API
 class RemoteAPIService: APIServiceable {
+    private lazy var NEWS_API_KEY: String = {
+        return ProcessInfo.processInfo.environment["NEWS_API_KEY"] ?? ""
+    }()
+    
+    private var session: URLSession
+    
+    private lazy var headers: [String:String] = {
+        return [ "authorization" : self.NEWS_API_KEY ]
+    }()
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     
     func fetchTopHeadlines(_ completion: @escaping (Result<NewsApiResponse, APIError>) -> Void) {
-        // Ensure api key exists within env
-        guard let NEWS_API_KEY = ProcessInfo.processInfo.environment["NEWS_API_KEY"] else {
-            let message = "Your NewsApi.org API Key must be set in xCode's \"Run Configuration\" environment variables."
-            completion(.failure(.apiGeneratedError(message)))
-            return
-        }
-        
-        // CSV list of NewsApi.org compatible news-sources
-        // https://newsapi.org/docs/endpoints/sources
+       
+        // NewsApi.org news-sources to fetch - https://newsapi.org/docs/endpoints/sources
         let newsSourcesCSV = "buzzfeed,engadget,espn,bbc-news,techcrunch,business-insider,bloomberg"
-        
         let urlString = "https://newsapi.org/v2/top-headlines?sources=\(newsSourcesCSV)"
-        let headers = [ "authorization" : NEWS_API_KEY ]
-        var request = URLRequest(url: URL(string: urlString)!)
+        
+        let url = URL(string: urlString)!
+        
+        var request = URLRequest(url: url)
         
         request.httpMethod = "GET"
         headers.forEach { request.addValue($0.value, forHTTPHeaderField: $0.key) }
-        
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
         
         session.dataTask(with: request) { (data, response, error) in
             
@@ -52,44 +56,43 @@ class RemoteAPIService: APIServiceable {
                 completion(.failure(.requestFailed))
                 return
             }
-            
+
             // Does statusCode reside within expected range 200...299
             if !response.isResponseOK() {
-                completion(.failure(.statusCodeInvalid("Received status code \(response.statusCode)")))
+                completion(.failure(.statusCodeInvalid))
                 return
             }
-            
+
             // Is there an error
             if let error = error {
                 let message = error.localizedDescription
                 print(message)
-                completion(.failure(.apiGeneratedError(message)))
+                completion(.failure(.apiGeneratedError))
                 return
             }
-            
+
             // Examine the data
             guard let data = data else {
-                completion(.failure(.decodeError("Cannot decode empty data")))
+                completion(.failure(.decodeError))
                 return
             }
-            
+
             // Parse data into NFNResponse model object
             do {
                 let decodedData = try JSONDecoder().decode(NewsApiResponse.self, from: data)
-                
+
                 if decodedData.status == "error" {
-                    let apiErrorMessage = decodedData.message ?? "Not provided"
                     completion(
-                        .failure(.apiGeneratedError(apiErrorMessage))
+                        .failure(.apiGeneratedError)
                     )
                 } else {
                     completion(
                         .success(decodedData)
                     )
                 }
-            } catch (let err) {
+            } catch {
                 completion(
-                    .failure(.decodeError(err.localizedDescription))
+                    .failure(.decodeError)
                 )
             }
             
@@ -110,7 +113,7 @@ class LocalAPIService: APIServiceable {
             // Ensure the file's contents are not nil
             guard let data = jsonData else {
                 completion(
-                    .failure(.fileError("File does not contain data: \(self.localFileName)"))
+                    .failure(.fileError)
                 )
                 return
             }
@@ -120,18 +123,17 @@ class LocalAPIService: APIServiceable {
                 let decodedData = try JSONDecoder().decode(NewsApiResponse.self, from: data)
                 
                 if decodedData.status == "error" {
-                    let apiErrorMessage = decodedData.message ?? "Not provided"
                     completion(
-                        .failure(.apiGeneratedError(apiErrorMessage))
+                        .failure(.apiGeneratedError)
                     )
                 } else {
                     completion(
                         .success(decodedData)
                     )
                 }
-            } catch (let err) {
+            } catch {
                 completion(
-                    .failure(.decodeError(err.localizedDescription))
+                    .failure(.decodeError)
                 )
             }
         }

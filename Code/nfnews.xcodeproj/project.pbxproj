@@ -11,7 +11,6 @@
 		96230E1025CF3C9F00DA9752 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96230E0F25CF3C9F00DA9752 /* HomeController.swift */; };
 		96230E1525CF3CA100DA9752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96230E1425CF3CA100DA9752 /* Assets.xcassets */; };
 		96230E1825CF3CA100DA9752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96230E1625CF3CA100DA9752 /* LaunchScreen.storyboard */; };
-		96230E2325CF3CA100DA9752 /* nfnewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96230E2225CF3CA100DA9752 /* nfnewsTests.swift */; };
 		96230E2E25CF3CA100DA9752 /* nfnewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96230E2D25CF3CA100DA9752 /* nfnewsUITests.swift */; };
 		96230E4725CF415500DA9752 /* update_build_date.sh in Resources */ = {isa = PBXBuildFile; fileRef = 96230E4525CF415500DA9752 /* update_build_date.sh */; };
 		96230E4825CF415500DA9752 /* update_build_number.sh in Resources */ = {isa = PBXBuildFile; fileRef = 96230E4625CF415500DA9752 /* update_build_number.sh */; };
@@ -43,6 +42,7 @@
 		96C1E9C025D1A45600DC0033 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E9BF25D1A45600DC0033 /* UI.swift */; };
 		96C1E9C525D1AAB300DC0033 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E9C425D1AAB300DC0033 /* Extensions.swift */; };
 		96C1E9DE25D2CBDF00DC0033 /* NFNSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E9DD25D2CBDF00DC0033 /* NFNSource.swift */; };
+		96F0687925D481E30035B417 /* RemoteAPIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F0687825D481E30035B417 /* RemoteAPIServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,6 @@
 		96230E1725CF3CA100DA9752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96230E1925CF3CA100DA9752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96230E1E25CF3CA100DA9752 /* nfnewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nfnewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		96230E2225CF3CA100DA9752 /* nfnewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nfnewsTests.swift; sourceTree = "<group>"; };
 		96230E2425CF3CA100DA9752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96230E2925CF3CA100DA9752 /* nfnewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nfnewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96230E2D25CF3CA100DA9752 /* nfnewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nfnewsUITests.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		96C1E9BF25D1A45600DC0033 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		96C1E9C425D1AAB300DC0033 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		96C1E9DD25D2CBDF00DC0033 /* NFNSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFNSource.swift; sourceTree = "<group>"; };
+		96F0687825D481E30035B417 /* RemoteAPIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAPIServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +167,8 @@
 		96230E2125CF3CA100DA9752 /* nfnewsTests */ = {
 			isa = PBXGroup;
 			children = (
-				96230E2225CF3CA100DA9752 /* nfnewsTests.swift */,
 				96230E2425CF3CA100DA9752 /* Info.plist */,
+				96F0687825D481E30035B417 /* RemoteAPIServiceTests.swift */,
 			);
 			path = nfnewsTests;
 			sourceTree = "<group>";
@@ -497,7 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96230E2325CF3CA100DA9752 /* nfnewsTests.swift in Sources */,
+				96F0687925D481E30035B417 /* RemoteAPIServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,12 +659,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 567T5547D4;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = nfnews/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arpinoda.nfnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -679,12 +681,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 567T5547D4;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = nfnews/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arpinoda.nfnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

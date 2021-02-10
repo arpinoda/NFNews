@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NewsApiResponse: Codable {
+struct NewsApiResponse: Codable, Equatable {
     let status: String
     let totalResults: Int
     let articles: [NewsApiArticle]?
@@ -15,4 +15,10 @@ struct NewsApiResponse: Codable {
     // Populated when error occurs
     let code: String?
     let message: String?
+    
+    static func == (lhs: NewsApiResponse, rhs: NewsApiResponse) -> Bool {
+        return lhs.status == rhs.status && lhs.totalResults == rhs.totalResults
+    }
+    
+    
 }
