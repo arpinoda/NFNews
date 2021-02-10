@@ -23,7 +23,7 @@ class HomeViewModel {
     var onArticleTapped: OnArticleTapped
     
     // Transformed models for the view
-    var tableViewSections = Dictionary<String, NFNSource>()
+    var tableViewCellModels = Dictionary<String, TableViewCellModel>()
     
     init(apiClient: APIServiceable, onLoading: @escaping OnLoading, onError: @escaping OnError, onSuccess: @escaping OnSuccess, onArticleTapped: @escaping OnArticleTapped) {
         self.apiClient = apiClient
@@ -44,7 +44,7 @@ class HomeViewModel {
                 break
             case .failure(let error):
                 print(error)
-                self.onError("Simplified error message for user")
+                self.onError(error.localizedDescription)
                 break
             }
         }
@@ -56,30 +56,56 @@ class HomeViewModel {
         }.resume()
     }
     
-    // Transform Api response so its suitable for view
+    // Transform Api response into models compatible with tableView and collectionViews
+    // Each news source is represented by a single TableViewCell, existing in 1 row within 1 unique section.
+    // Each article represents a CollectionViewCell within the parent TableViewCell
     private func transformResponse(_ data: NewsApiResponse) {
-        tableViewSections.removeAll()
+        tableViewCellModels.removeAll()
         
-        // Currently, articles are a child of source. We need to reverse this
+        // Since Dictionary is unordered, this values makes it easy to lookup appropriate model during cell rendering
         var indexPathSection = 0
         
         data.articles?.forEach({ (article) in
-            let sourceId = article.source.id ?? ""
+            let sourceId = article.source.id ?? UUID().uuidString
+            let collectionViewCellModel = createModel(forCollectionViewCell: article)
             
-            // If source doesn't exist in local collection
-            if !(tableViewSections.keys.contains(sourceId)) {
-                // Add it to local collection
-                tableViewSections[sourceId] = NFNSource(id: sourceId, name: article.source.name, indexPathSection: indexPathSection, articles: [NewsApiArticle]())
+            // If news source doesn't exist in local collection
+            if !(tableViewCellModels.keys.contains(sourceId)) {
                 
-                // Then, add article to newly created section
-                tableViewSections[sourceId]?.articles?.append(article)
+                // Create it & insert into local collection
+                tableViewCellModels[sourceId] = TableViewCellModel(
+                    title: article.source.name ?? "Untitled",
+                    items: [CollectionViewCellModel](),
+                    homeViewModel: self,
+                    indexPathSection: indexPathSection
+                )
                 
                 indexPathSection += 1
-            } else {
-                // Source already exists, let's add the article
-                tableViewSections[sourceId]?.articles?.append(article)
             }
+            
+            // Append this article to the source
+            tableViewCellModels[sourceId]!.items.append(collectionViewCellModel)
         })
+    }
+    
+    // Creates a CollectionViewCellModel from an APIArticle
+    private func createModel(forCollectionViewCell newsApiArticle: NewsApiArticle) -> CollectionViewCellModel {
+        let title = newsApiArticle.title ?? "Untitled"
+        let imageURL = newsApiArticle.urlToImage != nil ? URL(string: newsApiArticle.urlToImage!) : nil
+        let sourceURL = newsApiArticle.url != nil ? URL(string: newsApiArticle.url!)! : URL(string: "https://www.google.com")!
+        var prettyDate = "n/a"
+        
+        if let publishedAtString = newsApiArticle.publishedAt, let publishedAtDate = DateFormatter.iso8601.date(from: publishedAtString) {
+            prettyDate = Date.prettyTimestamp(since: publishedAtDate)
+        }
+        
+        return CollectionViewCellModel(
+            title: title,
+            imageURL: imageURL,
+            prettyDate: prettyDate,
+            sourceURL: sourceURL,
+            homeViewModel: self
+        )
     }
 }
 
@@ -92,42 +118,17 @@ extension HomeViewModel {
     }
     
     func numberOfSections() -> Int {
-        return tableViewSections.count
+        return tableViewCellModels.count
     }
     
     func heightForRowAt(indexPath: IndexPath) -> Double {
-        var result: Double = 60.0
-        
-        if tableViewSections.count < 3 {
-            result = Double(TableViewCell.cellHeight)
-        } else {
-            result = Double(Int((UI.screenHeight - AppTabBarController.tabBarHeight)) / tableViewSections.count)
-        }
-
-        return result
+        return Double(TableViewCell.cellHeight)
     }
     
     func modelForCell(at indexPath: IndexPath) -> TableViewCellModel? {
-        guard let source = tableViewSections.first(where: { $0.value.indexPathSection == indexPath.section }), let articles = source.value.articles else {
+        guard let modelQuery = tableViewCellModels.first(where: { $0.value.indexPathSection == indexPath.section }) else {
             return nil
         }
-        
-        let items = articles.map { (article) -> CollectionViewCellModel in
-            let imageURL = article.urlToImage != nil ? URL(string: article.urlToImage!) : nil
-            let title = article.title ?? "n/a"
-            
-            var prettyDate = "n/a"
-            
-            if let publishedAtString = article.publishedAt, let publishedAtDate = DateFormatter.iso8601.date(from: publishedAtString) {
-                
-                prettyDate = Date.prettyTimestamp(since: publishedAtDate)
-            }
-            
-            let sourceURL = article.url != nil ? URL(string: article.url!)! : URL(string: "https://www.google.com")!
-            
-            return CollectionViewCellModel(title: title, imageURL: imageURL, prettyDate: prettyDate, sourceURL: sourceURL, homeViewModel: self)
-        }
-        
-        return TableViewCellModel(title: source.value.name ?? "Untilted", items: items, homeViewModel: self)
+        return modelQuery.value
     }
 }

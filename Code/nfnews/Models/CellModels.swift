@@ -11,6 +11,7 @@ struct TableViewCellModel {
     var title: String
     var items: [CollectionViewCellModel]
     var homeViewModel: HomeViewModel
+    var indexPathSection: Int
 }
 
 struct CollectionViewCellModel {

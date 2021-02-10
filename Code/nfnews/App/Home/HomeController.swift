@@ -15,8 +15,8 @@ class HomeController: UIViewController {
     /// We're "binding" to the view model by passing various callback functions
     fileprivate lazy var viewModel: HomeViewModel = {
         return HomeViewModel(
-            apiClient: LocalAPIService(),
-//            apiClient: RemoteAPIService(),
+//            apiClient: LocalAPIService(),
+            apiClient: RemoteAPIService(),
             onLoading: self.onLoading,
             onError: self.onError,
             onSuccess: self.onSuccess,
@@ -78,19 +78,24 @@ class HomeController: UIViewController {
     }
     
     private func onSuccess() {
-        tableView.refreshControl?.endRefreshing()
-        self.tableView.reloadData()
-        tableView.isScrollEnabled = true
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+            self.tableView.isScrollEnabled = true
+        }
     }
     
     private func onError(message: String) {
-        tableView.refreshControl?.endRefreshing()
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
 
-        present(alert, animated: true, completion: nil)
-        tableView.isScrollEnabled = true
+            self.present(alert, animated: true, completion: {
+                self.tableView.isScrollEnabled = true
+            })
+        }
     }
     
     private func onLoading() {
@@ -123,11 +128,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         
         let model = viewModel.modelForCell(at: indexPath)
         cell.model = model
-        
-        if indexPath.section == 0 {
-            cell.borderColor = nil
-        }
-        
+        cell.borderHidden = indexPath.section == 0
         return cell
     }
     

@@ -317,7 +317,7 @@ class AppHeader: UIView {
 
     private var constraintsConfigured = false
     private var gradientConfigured = false
-    private var defaultHeight = 0.165 * UI.screenHeight
+    private var defaultHeight = 0.17 * UI.screenHeight
     
     private lazy var padding: UIEdgeInsets = {
         return UIEdgeInsets(
@@ -427,16 +427,15 @@ class TableViewCell: UITableViewCell {
     static var cellHeight:CGFloat = UI.screenHeight / 3.3
     static var lineSpacingMultiplier: CGFloat = AppCollectionViewImageView.sizeMultiplier * 0.76
     
-    var placeholderCell = CollectionViewCell()
-    
     private var borderDrawn = false
-    
+    var borderHidden = false
     @objc dynamic var borderColor: UIColor?
     
     var model: TableViewCellModel? {
         didSet {
             self.groupTitle.text = model?.title ?? "Untitled category"
             self.groupTitle.sizeToFit()
+            self.collectionView.reloadData()
         }
     }
 
@@ -484,6 +483,17 @@ class TableViewCell: UITableViewCell {
         return fl
     }()
     
+    lazy var border: CALayer = {
+        let border = CALayer()
+        if let borderColor = self.borderColor {
+            border.backgroundColor = borderColor.withAlphaComponent(0.15).cgColor
+        }
+        let width = 1
+        border.frame = CGRect(x: Int(AppTableView.leftTrackWidth + 1), y: 0, width: Int(self.frame.width), height: width)
+        
+        return border
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -500,13 +510,10 @@ class TableViewCell: UITableViewCell {
         
         // TableViewCell bottom border - set as top border, hidden on first cell
         // Layer not rendering inside init()
-        if !borderDrawn, let borderColor = borderColor {
+        self.border.isHidden = borderHidden
+        
+        if !borderDrawn {
             borderDrawn = true
-            let border = CALayer()
-            border.backgroundColor = borderColor.withAlphaComponent(0.15).cgColor
-            
-            let width = 1
-            border.frame = CGRect(x: Int(AppTableView.leftTrackWidth + 1), y: 0, width: Int(self.frame.width), height: width)
             self.contentView.layer.addSublayer(border)
         }
     }
@@ -553,35 +560,8 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, U
         collectionView.deselectItem(at: indexPath, animated: true)
     }
     
-    // Auto size cell depending upon text & image height
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if let item = self.model?.items[indexPath.row] {
-            let approximatedWidth = abs(collectionView.frame.width * AppCollectionViewTitle.sizeMultiplier - padding.left)
-            let size = CGSize(width: approximatedWidth, height: CGFloat.greatestFiniteMagnitude)
-            
-            // Image
-            let imageSize = collectionView.frame.width * AppCollectionViewImageView.sizeMultiplier
-            
-            // Title
-            placeholderCell.title.text = item.title
-            let titleSize = placeholderCell.title.sizeThatFits(size)
-            // Date
-            placeholderCell.date.text = item.prettyDate
-            let dateSize = placeholderCell.date.sizeThatFits(size)
-            
-            let paddingBottom = TableViewCell.lineSpacingMultiplier * collectionView.frame.height
-            
-            let summedText = ceil(titleSize.height + dateSize.height * 2.6)
-            let maxHeight = max(imageSize, summedText) + paddingBottom
-           
-            
-            let result = CGSize(width: collectionView.frame.width, height: maxHeight)
-            
-            return result
-        }
-        
-        return CGSize(width: collectionView.frame.width, height: 200)
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height / 2.5)
     }
     
     func collectionView(_ collectionView: UICollectionView,
