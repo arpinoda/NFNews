@@ -8,6 +8,7 @@
 import UIKit
 
 class AppCollectionViewImageView: UIImageView {
+    static var sizeMultiplier:CGFloat = 0.175
     
     override init(image: UIImage?) {
         super.init(image: image)
@@ -26,8 +27,8 @@ class AppCollectionViewImageView: UIImageView {
         super.layoutSubviews()
         
         self.trailingAnchor.constraint(equalTo: superview!.trailingAnchor).isActive = true
-        self.widthAnchor.constraint(equalToConstant: superview!.frame.width * UI.collectionImageMultiplier).isActive = true
-        self.heightAnchor.constraint(equalToConstant: superview!.frame.width * UI.collectionImageMultiplier).isActive = true
+        self.widthAnchor.constraint(equalToConstant: superview!.frame.width * AppCollectionViewImageView.sizeMultiplier).isActive = true
+        self.heightAnchor.constraint(equalToConstant: superview!.frame.width * AppCollectionViewImageView.sizeMultiplier).isActive = true
         self.topAnchor.constraint(equalTo: superview!.topAnchor, constant: padding.top).isActive = true
     }
     
@@ -78,6 +79,7 @@ class AppCollectionViewSubtitle: AppConfigurableLabel {
 }
 
 class AppCollectionViewTitle: AppConfigurableLabel {
+    static var sizeMultiplier:CGFloat = 0.7
     
     private lazy var padding: UIEdgeInsets = {
         return UIEdgeInsets(top: 8, left: 0.5 * AppTableView.leftTrackWidth, bottom: 0, right: 0)
@@ -97,7 +99,7 @@ class AppCollectionViewTitle: AppConfigurableLabel {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let width = abs(superview!.frame.width * UI.collectionTitleMultiplier - padding.left)
+        let width = abs(superview!.frame.width * AppCollectionViewTitle.sizeMultiplier - padding.left)
         
         self.translatesAutoresizingMaskIntoConstraints = false
         self.leadingAnchor.constraint(equalTo: superview!.leadingAnchor, constant: padding.left).isActive = true
@@ -423,6 +425,8 @@ class AppLogo: UIImageView {
 
 class TableViewCell: UITableViewCell {
     static var cellHeight:CGFloat = UI.screenHeight / 3.3
+    static var lineSpacingMultiplier: CGFloat = AppCollectionViewImageView.sizeMultiplier * 0.76
+    
     var placeholderCell = CollectionViewCell()
     
     private var borderDrawn = false
@@ -553,11 +557,11 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if let item = self.model?.items[indexPath.row] {
-            let approximatedWidth = abs(collectionView.frame.width * UI.collectionTitleMultiplier - padding.left)
+            let approximatedWidth = abs(collectionView.frame.width * AppCollectionViewTitle.sizeMultiplier - padding.left)
             let size = CGSize(width: approximatedWidth, height: CGFloat.greatestFiniteMagnitude)
             
             // Image
-            let imageSize = collectionView.frame.width * UI.collectionImageMultiplier
+            let imageSize = collectionView.frame.width * AppCollectionViewImageView.sizeMultiplier
             
             // Title
             placeholderCell.title.text = item.title
@@ -566,7 +570,7 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, U
             placeholderCell.date.text = item.prettyDate
             let dateSize = placeholderCell.date.sizeThatFits(size)
             
-            let paddingBottom = UI.collectionLineSpacingMultiplier * collectionView.frame.height
+            let paddingBottom = TableViewCell.lineSpacingMultiplier * collectionView.frame.height
             
             let summedText = ceil(titleSize.height + dateSize.height * 2.6)
             let maxHeight = max(imageSize, summedText) + paddingBottom
@@ -771,7 +775,7 @@ class RollingFadeLayout: UICollectionViewFlowLayout {
 class TallerTabBar: UITabBar {
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         var sizeThatFits = super.sizeThatFits(size)
-        sizeThatFits.height = UI.tabBarHeight
+        sizeThatFits.height = AppTabBarController.tabBarHeight
         return sizeThatFits
     }
 }

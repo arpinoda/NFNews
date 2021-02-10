@@ -13,10 +13,11 @@ class AppTabBarController: UITabBarController {
     let favorite = FavoriteController()
     let profile = ProfileController()
     
-    private var bottomBackground = UIView()
+    private var gradientBackground = UIView()
     private var gradientsConfigured = false
     
     static var gradients: [UIColor]?
+    static let tabBarHeight: CGFloat = 0.132 * UI.screenHeight
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,36 +26,33 @@ class AppTabBarController: UITabBarController {
     }
     
     private func configureUI() {
-        let iconWidth = 0.48 * UI.tabBarHeight
+        let iconWidth = 0.48 * AppTabBarController.tabBarHeight
         object_setClass(self.tabBar, TallerTabBar.self)
         home.navigationController.tabBarItem = AppTabBarItem(icon: UIImage(named: "home"), iconWidth: iconWidth, tag: 0)
         search.tabBarItem = AppTabBarItem(icon: UIImage(named: "search"), iconWidth: iconWidth, tag: 1)
         favorite.tabBarItem = AppTabBarItem(icon: UIImage(named: "favorite"), iconWidth: iconWidth, tag: 2)
         profile.tabBarItem = AppTabBarItem(icon: UIImage(named: "profile"), iconWidth: iconWidth, tag: 3)
         
-        self.view.addSubview(bottomBackground)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        bottomBackground.translatesAutoresizingMaskIntoConstraints = false
-        bottomBackground.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        bottomBackground.bottomAnchor.constraint(equalTo: tabBar.safeAreaLayoutGuide.topAnchor).isActive = true
-        bottomBackground.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        bottomBackground.topAnchor.constraint(equalTo: self.tabBar.safeAreaLayoutGuide.topAnchor, constant: -0.055 * UI.screenHeight).isActive = true
+        self.view.addSubview(gradientBackground)
+        
+        gradientBackground.translatesAutoresizingMaskIntoConstraints = false
+        gradientBackground.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        gradientBackground.bottomAnchor.constraint(equalTo: tabBar.safeAreaLayoutGuide.topAnchor).isActive = true
+        gradientBackground.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        gradientBackground.topAnchor.constraint(equalTo: self.tabBar.safeAreaLayoutGuide.topAnchor, constant: -0.055 * UI.screenHeight).isActive = true
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        if let gradients = AppTabBarController.gradients, !gradientsConfigured, self.bottomBackground.frame.width > 0 {
+        if let gradients = AppTabBarController.gradients, !gradientsConfigured, self.gradientBackground.frame.width > 0 {
             gradientsConfigured = true
             let leftColor = gradients[1]
             let rightColor = gradients[0]
             self.tabBar.addGradientBackground(colors: leftColor, rightColor, colorLocations: [0.3, 1.0], angle: 90.0)
             
             // Bottom background
-            bottomBackground.addGradientBackground(colors: rightColor.withAlphaComponent(0), leftColor.withAlphaComponent(0.75))
+            gradientBackground.addGradientBackground(colors: rightColor.withAlphaComponent(0), leftColor.withAlphaComponent(0.75))
             
             self.positionTabBarItems()
         }

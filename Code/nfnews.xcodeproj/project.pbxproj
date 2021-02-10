@@ -28,6 +28,7 @@
 		96230EAD25CF4F2200DA9752 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96230EA825CF4F2200DA9752 /* Montserrat-Regular.otf */; };
 		96230EAE25CF4F2200DA9752 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96230EA925CF4F2200DA9752 /* Montserrat-ExtraBold.otf */; };
 		9624C8EC25D30BA6008E2E4B /* CellModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624C8EB25D30BA6008E2E4B /* CellModels.swift */; };
+		9624C90625D354B7008E2E4B /* HomeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624C90525D354B7008E2E4B /* HomeDetailController.swift */; };
 		96C1E97C25D054CA00DC0033 /* NewsApiArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E97B25D054CA00DC0033 /* NewsApiArticle.swift */; };
 		96C1E98125D0555B00DC0033 /* NewsApiSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E98025D0555B00DC0033 /* NewsApiSource.swift */; };
 		96C1E98625D055A300DC0033 /* NewsApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E98525D055A300DC0033 /* NewsApiResponse.swift */; };
@@ -89,6 +90,7 @@
 		96230EA825CF4F2200DA9752 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		96230EA925CF4F2200DA9752 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
 		9624C8EB25D30BA6008E2E4B /* CellModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModels.swift; sourceTree = "<group>"; };
+		9624C90525D354B7008E2E4B /* HomeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailController.swift; sourceTree = "<group>"; };
 		96C1E97B25D054CA00DC0033 /* NewsApiArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiArticle.swift; sourceTree = "<group>"; };
 		96C1E98025D0555B00DC0033 /* NewsApiSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiSource.swift; sourceTree = "<group>"; };
 		96C1E98525D055A300DC0033 /* NewsApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiResponse.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				96230E0F25CF3C9F00DA9752 /* HomeController.swift */,
 				96230E9E25CF494700DA9752 /* HomeCoordinator.swift */,
+				9624C90525D354B7008E2E4B /* HomeDetailController.swift */,
 				96C1E98F25D05A1200DC0033 /* HomeViews.swift */,
 				96C1E98A25D0586500DC0033 /* HomeViewModel.swift */,
 			);
@@ -468,6 +471,7 @@
 				96C1E9AB25D0B60000DC0033 /* FontManager.swift in Sources */,
 				96230E8625CF47AC00DA9752 /* Coordinator.swift in Sources */,
 				96230E9025CF48A200DA9752 /* FavoriteController.swift in Sources */,
+				9624C90625D354B7008E2E4B /* HomeDetailController.swift in Sources */,
 				96230E9F25CF494700DA9752 /* HomeCoordinator.swift in Sources */,
 				96230E1025CF3C9F00DA9752 /* HomeController.swift in Sources */,
 				96230E9525CF48CC00DA9752 /* SearchController.swift in Sources */,

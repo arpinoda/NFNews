@@ -98,7 +98,7 @@ class HomeController: UIViewController {
     }
     
     private func onArticleTapped(url: URL) {
-        print(url.absoluteString)
+        coordinator?.showArticleDetail(url: url)
     }
 }
 

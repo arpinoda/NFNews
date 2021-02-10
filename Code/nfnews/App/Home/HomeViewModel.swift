@@ -101,7 +101,7 @@ extension HomeViewModel {
         if tableViewSections.count < 3 {
             result = Double(TableViewCell.cellHeight)
         } else {
-            result = Double(Int((UI.screenHeight - UI.tabBarHeight)) / tableViewSections.count)
+            result = Double(Int((UI.screenHeight - AppTabBarController.tabBarHeight)) / tableViewSections.count)
         }
 
         return result

@@ -20,7 +20,16 @@ class HomeCoordinator: Coordinator {
         self.navigationController.viewControllers = [homeVC]
     }
     
-    func testMethod() {
-        print("Hello from HomeCoordinator")
+    func showArticleDetail(url: URL) {
+        let vc = HomeDetailController(url: url)
+        vc.hidesBottomBarWhenPushed = true
+        vc.coordinator = self
+        let n = UINavigationController(rootViewController: vc)
+        self.navigationController.present(n, animated: true, completion: nil)
+    }
+    
+    func shareArticle(_ url: URL) {
+        let ac = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        self.navigationController.present(ac, animated: true)
     }
 }
