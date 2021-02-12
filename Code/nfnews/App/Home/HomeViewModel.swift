@@ -15,7 +15,7 @@ class HomeViewModel {
     typealias OnLoading = (() -> Void)
     typealias OnError = ((String) -> Void)
     typealias OnSuccess = (() -> Void)
-    typealias OnArticleTapped = ((URL) -> Void)
+    typealias OnArticleTapped = ((CollectionViewCellModel) -> Void)
     
     var onLoading: OnLoading
     var onError: OnError

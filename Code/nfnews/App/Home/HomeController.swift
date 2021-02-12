@@ -102,8 +102,8 @@ class HomeController: UIViewController {
         tableView.refreshControl?.beginRefreshing()
     }
     
-    private func onArticleTapped(url: URL) {
-        coordinator?.showArticleDetail(url: url)
+    private func onArticleTapped(article: CollectionViewCellModel) {
+        coordinator?.showArticleDetail(article: article)
     }
 }
 

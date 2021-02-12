@@ -555,7 +555,7 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, U
             return
         }
         
-        model?.homeViewModel.onArticleTapped(article.sourceURL)
+        model?.homeViewModel.onArticleTapped(article)
     
         collectionView.deselectItem(at: indexPath, animated: true)
     }

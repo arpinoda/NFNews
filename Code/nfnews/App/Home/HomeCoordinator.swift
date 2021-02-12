@@ -20,8 +20,8 @@ class HomeCoordinator: Coordinator {
         self.navigationController.viewControllers = [homeVC]
     }
     
-    func showArticleDetail(url: URL) {
-        let vc = HomeDetailController(url: url)
+    func showArticleDetail(article: CollectionViewCellModel) {
+        let vc = HomeDetailController(article: article)
         vc.hidesBottomBarWhenPushed = true
         vc.coordinator = self
         let n = UINavigationController(rootViewController: vc)

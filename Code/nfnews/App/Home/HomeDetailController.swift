@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 class HomeDetailController: UIViewController {
-    fileprivate var url:URL
+    fileprivate var article:CollectionViewCellModel
     var coordinator: HomeCoordinator?
     
     lazy var webView: WKWebView = {
@@ -33,15 +33,15 @@ class HomeDetailController: UIViewController {
     lazy var backBarItem: UIBarButtonItem = {
        let back = UIBarButtonItem(
             title: "Done",
-            style:.plain,
+            style: .plain,
             target: self,
             action: #selector(goBack)
         )
         return back
     }()
     
-    init(url: URL) {
-        self.url = url
+    init(article: CollectionViewCellModel) {
+        self.article = article
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -52,7 +52,8 @@ class HomeDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        self.loadWebpage(url: url)
+        
+        self.loadWebpage(url: article.sourceURL)
     }
     
     @objc
@@ -82,6 +83,8 @@ class HomeDetailController: UIViewController {
         webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         webView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        self.title = article.title
         
         self.navigationItem.rightBarButtonItem = self.acitivityBarItem
         self.navigationItem.leftBarButtonItem = self.backBarItem
