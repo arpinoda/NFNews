@@ -206,9 +206,3 @@ extension Date {
 extension DateFormatter {
     static let iso8601 = OptionalFractionalSecondsDateFormatter()
 }
-
-extension HTTPURLResponse {
-    func isResponseOK() -> Bool {
-        return (200...299).contains(self.statusCode)
-    }
-}

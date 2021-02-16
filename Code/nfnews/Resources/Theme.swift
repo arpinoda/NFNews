@@ -40,20 +40,20 @@ extension Theme {
         AppLogo.appearance().tintColor = logoTint
         
         if headerBackground.count == 1 {
-            AppHeader.appearance().backgroundColor = headerBackground[0]
+            HomeHeader.appearance().backgroundColor = headerBackground[0]
         } else if headerBackground.count > 1 {
-            AppHeader.appearance().backgroundColors = headerBackground
+            HomeHeader.appearance().backgroundColors = headerBackground
         }
         
-        AppTableView.appearance().gradientColors = backgroundGradients
+        HomeTableView.appearance().gradientColors = backgroundGradients
         
         AppTableViewTitle.appearance().configurableTextColor = tableViewTitle
         
-        AppTableViewDragHandle.appearance().configurableTextColor = tableViewDragHandle
+        HomeTableViewDragHandle.appearance().configurableTextColor = tableViewDragHandle
         
-        AppCollectionViewTitle.appearance().configurableTextColor = collectionViewTitle
+        HomeCollectionViewTitle.appearance().configurableTextColor = collectionViewTitle
         
-        AppCollectionViewSubtitle.appearance().configurableTextColor = collectionViewSubtitle
+        HomeCollectionViewSubtitle.appearance().configurableTextColor = collectionViewSubtitle
         
         AppTabBarItem.deselectedForeground = self.tabBarItemDeselectedForeground
         AppTabBarItem.selectedBackground = self.tabBarItemSelectedBackground
@@ -66,9 +66,9 @@ extension Theme {
         UITabBar.appearance(whenContainedInInstancesOf: [AppTabBarController.self]).isTranslucent = false
         UITabBar.appearance(whenContainedInInstancesOf: [AppTabBarController.self]).clipsToBounds = true
         
-        CollectionViewCell.appearance().selectedColor = self.collectionViewCellSelected
+        HomeCollectionViewCell.appearance().selectedColor = self.collectionViewCellSelected
         
-        TableViewCell.appearance().borderColor = tableViewSeparator
+        HomeTableViewCell.appearance().borderColor = tableViewSeparator
         
         extend()
     }

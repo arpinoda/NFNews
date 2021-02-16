@@ -1,0 +1,22 @@
+
+
+Scenes
+- A scene is a single use case, worfklow, or feature within the app. Its size is subjective to the developer or team, usually up to 4 screens to achieve a single workflow.
+
+- The folder structure helps compartmentalize each workflow. A Developer should be able to drag one scene into a separate project, and it should mostly function, with a possible caveat of having to inject relevant dependencies.
+
+
+Coordinators
+- A coordinator is responsible for navigating from one View to another. It creates Controllers and ViewModels, prepares & injects dependencies, and finally presents or pushes the final controller.
+
+- Each scene should have its own coordinator, and it should be a child of the main AppCoordinator which is owned by the AppDelegate.
+
+
+ViewModels
+- A ViewModel is responsible for the business logic powering a view. Examples of BL include validation, network requests, preparing data model for presentation ..
+
+- ViewModels should never require "import UIKit" statements. The ViewController will have a 1-1 relationship with the ViewModel, and VC will own a strong reference to the VM. VM will actually be created by the coordinator and injected into VC
+
+
+ViewDatas
+- This simply takes in a bare model and wraps in a struct. This ensures the View does not have any extra work to do to incoming data before presenting it.
