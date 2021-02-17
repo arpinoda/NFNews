@@ -21,7 +21,7 @@ Cuberto "News App Interaction" - https://dribbble.com/shots/4909274-News-App-Int
 - NewsApi.org developer key https://newsapi.org/register
 
 ## Features
-- Compatible with hundreds of news sources around the world
+- Compatible with hundreds of news sources around the globe - https://newsapi.org/sources
 - ThemeManager to allow iOS <= 12 users to dynamically change UI theme within app
 - FontManager to centralize font logic and provide dynamic scaling
 - MVVM + Coordinator patterns
