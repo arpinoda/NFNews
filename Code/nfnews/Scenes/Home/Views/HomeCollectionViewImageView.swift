@@ -39,7 +39,7 @@ class HomeCollectionViewImageView: UIImageView {
     }
     
     private func configureUI() {
-        self.contentMode = .scaleAspectFit
+        self.contentMode = .scaleAspectFill
         self.layer.cornerRadius = self.frame.width / 30
         self.clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
