@@ -1,10 +1,9 @@
 # NFNews
 <a href="https://dribbble.com/shots/4909274-News-App-Interaction">
-  <img src="Design/final.gif" height="600px" alt="Final product - Implementing Cuberto's interaction design" />
+  <img src="Design/final.gif" width="600px" alt="Final product - Implementing Cuberto's interaction design" />
 </a>
 
-#### Dribbble shot on the left, final product on the right (running in Simulator)
-
+##### *Implementing Cuberto's interaction design. The original Dribbble shot is on the left, the final product is on the right.*
 ## About the Project
 Having a go at implementing Cuberto’s "News App Interaction", with data being pulled from NewsApi.org. This has been on the hobby list for quite a while, very excited with the initial result.
 
