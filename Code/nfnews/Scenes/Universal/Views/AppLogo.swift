@@ -39,7 +39,7 @@ class AppLogo: UIImageView {
 
             translatesAutoresizingMaskIntoConstraints = false
             leadingAnchor.constraint(equalTo: superview!.leadingAnchor, constant: padding.left).isActive = true
-            widthAnchor.constraint(equalToConstant: UI.screenWidth / 3).isActive = true
+            widthAnchor.constraint(equalToConstant: UI.screenWidth / 3.5).isActive = true
 
             topConstraint = self.topAnchor.constraint(equalTo: superview!.safeAreaLayoutGuide.topAnchor, constant: padding.top)
             topConstraint.isActive = true
@@ -53,7 +53,7 @@ class AppLogo: UIImageView {
             self.image = UIImage(named: "broken")
         }
         
-        self.contentMode = .scaleAspectFit
+        self.contentMode = .scaleAspectFill
         
         // Allows image to appear with tinted color
         self.image = self.image!.withRenderingMode(.alwaysTemplate)
